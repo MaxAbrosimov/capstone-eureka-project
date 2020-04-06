@@ -35,7 +35,7 @@ public class AvailabilityServiceImpl implements AvailabilityService {
     }
 
     @PostConstruct
-    private void fillAvailabilities() {
+    void fillAvailabilities() {
         log.info("Processing availabilities on startup");
         availabilities = client.getAll().stream().collect(Collectors.toMap(Product::getId, entry-> RandomUtils.nextBoolean()));
         log.info("Processed availabilities: {}", availabilities);
