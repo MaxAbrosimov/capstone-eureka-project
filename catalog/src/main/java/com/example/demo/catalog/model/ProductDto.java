@@ -1,8 +1,10 @@
 package com.example.demo.catalog.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode
 public class ProductDto {
 
     private String id;

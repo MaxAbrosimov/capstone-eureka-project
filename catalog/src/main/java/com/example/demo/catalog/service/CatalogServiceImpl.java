@@ -44,7 +44,7 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @PostConstruct
-    private void loadAllProducts() throws IOException {
+    void loadAllProducts() throws IOException {
         log.info("Loading products from csv");
         loadedProducts = catalogLoader.getProducts().stream().map(ProductConverter::convert).collect(Collectors.toList());
         log.info("Loaded products from csv: {}", loadedProducts);
